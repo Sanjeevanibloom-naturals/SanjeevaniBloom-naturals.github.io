@@ -36,7 +36,7 @@ nav ul {
 }
 
 nav li {
-  background-color: #d4edd9; /* Light green background for the box */
+  background-color: #000000; /* Light green background for the box */
   padding: 12px 24px; /* Add padding for spacing */
   border-radius: 12px; /* Curved edges */
   position: relative; /* For positioning the animated text */
@@ -46,7 +46,7 @@ nav li {
 
 nav a {
   text-decoration: none;
-  color: #1b5e20; /* Dark green text color */
+  color: #942626; /* Dark green text color */
   font-weight: 600;
   font-size: 1rem;
   display: inline-block;
