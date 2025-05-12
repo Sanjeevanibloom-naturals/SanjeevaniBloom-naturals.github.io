@@ -1,0 +1,223 @@
+/* Reset and Base Styling */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #03d10a; /* Soft herbal background */
+  color: #2e2e2e;
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+}
+
+/* Header and Navigation */
+header {
+  background-color: #e6f4ea;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #c3e6c3;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #1b5e20;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px; /* Space between items */
+}
+
+nav li {
+  background-color: #d4edd9; /* Light green background for the box */
+  padding: 12px 24px; /* Add padding for spacing */
+  border-radius: 12px; /* Curved edges */
+  position: relative; /* For positioning the animated text */
+  overflow: hidden; /* Hide overflow during animation */
+  display: inline-block; /* Ensure they are in a row */
+}
+
+nav a {
+  text-decoration: none;
+  color: #1b5e20; /* Dark green text color */
+  font-weight: 600;
+  font-size: 1rem;
+  display: inline-block;
+  position: relative;
+}
+
+nav a::after {
+  content: attr(data-text); /* Use the link text */
+  position: absolute;
+  bottom: -100%; /* Start from completely below the box */
+  left: 0;
+  right: 0;
+  opacity: 0; /* Start hidden */
+  transition: bottom 0.8s ease-out, opacity 0.8s ease-out; /* Smooth transition */
+  z-index: 2; /* Ensure it's above other content */
+}
+
+/* Apply the animation only on hover */
+nav li:hover a::after {
+  bottom: 0; /* Move the text to the center of the box */
+  opacity: 1; /* Make it visible */
+  z-index: 2; /* Ensure this appears on top of other text */
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  height: 82vh; /* Full height of the viewport */
+  background-image: url('images/hero-bg.jpg');
+  background-size: 90%;
+  background-position: center 30%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+/* Overlay to darken the image */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black overlay */
+  z-index: 2; /* Make sure the overlay is above the background but below the text */
+}
+
+.hero h1, .hero p, .hero .btn {
+  position: relative; /* Ensures text is above the overlay */
+  z-index: 2; /* Text appears above the overlay */
+}
+
+.hero h1 {
+  font-size: 5.5vw; /* Adjust the font size */
+  margin-bottom: 20px;
+  color: #f0e04e;
+  font-weight: 600; /* Make the text bold */
+}
+
+.hero p {
+  font-size: 2.0vw;
+  margin-bottom: 30px;
+  color: #f9f9f9;
+  font-weight: 600;
+  max-width: 80%; /* Limit the width of the paragraph */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero .btn {
+  background-color: #2e7d32;
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  text-decoration: none;
+  border-radius: 30px;
+  font-size: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.hero .btn:hover {
+  background-color: #1b5e20;
+}
+
+/* Ensure full height and no default spacing */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body.about-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url('images/about-bg.jpg'); /* Adjust the path if needed */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #2e2e2e;
+}
+
+/* Wrapper that expands to push footer down */
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header (optional styles) */
+header {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav a {
+  margin: 0 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* About and Contact Boxes */
+.about, .contact {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* semi-transparent for readability */
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.about h2, .contact h2 {
+  color: #2e7d32;
+  margin-bottom: 16px;
+}
+
+/* Footer at bottom */
+footer {
+  background-color: #4caf50;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+
+.contact {
+  padding: 40px 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8); /* Transparent white for contact section */
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.contact h2 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 16px;
+}
+
+.contact p {
+  font-size: 1.1rem;
+  color: #333;
+}
